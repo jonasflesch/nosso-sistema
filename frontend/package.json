@@ -1,0 +1,19 @@
+{
+  "name": "nossoSistema",
+  "version": "1.0.0",
+  "description": "Nossos sistemas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^1.5.2",
+    "express": "^4.9.5",
+    "gulp": "^3.8.8",
+    "gulp-minify-css": "^0.3.10",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^1.0.0"
+  }
+}
