@@ -1,0 +1,363 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Óleo <span>> Receber Carro</span></h1>
+	</div>
+</div>
+<!-- widget grid -->
+<section id="widget-grid" class="">
+
+	<!-- row -->
+	<div class="row">
+
+		<!-- NEW WIDGET START -->
+		<article class="col-sm-12 col-md-12 col-lg-12">
+
+			<!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false" data-widget-deletebutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-check"></i> </span>
+					<h2>Passo a passo para troca de óleo</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<div class="row">
+							<form id="wizard-1" novalidate="novalidate">
+								<div id="bootstrap-wizard-1" class="col-sm-12">
+									<div class="form-bootstrapWizard">
+										<ul class="bootstrapWizard form-wizard">
+											<li class="active" data-target="#step1">
+												<a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Informar Placa</span> </a>
+											</li>
+											<li data-target="#step2">
+												<a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Informações Veículo</span> </a>
+											</li>
+											<li data-target="#step3">
+												<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Trocar</span> </a>
+											</li>
+											<li data-target="#step4">
+												<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Final</span> </a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+									<div class="tab-content">
+										<div class="tab-pane active" id="tab1">
+											<br>
+											<h3><strong>Passo 1 </strong> - Informar Placa</h3>
+
+											<div class="row">
+
+												<div class="col-sm-6">
+													<div class="form-group">
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
+															<input class="form-control input-lg" placeholder="ABC1234" type="text" name="placa" id="placa">
+
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+										<div class="tab-pane" id="tab2">
+											<br>
+											<h3><strong>Passo 2</strong> - Informações do Veículo</h3>
+											<div class="alert alert-info fade in">
+												<button class="close" data-dismiss="alert">
+													×
+												</button>
+												<i class="fa-fw fa fa-info"></i>
+												<strong>Informação!</strong> Esta é a primeira troca deste veículo, preencha as informações.
+											</div>
+											<div class="row">
+												<div class="col-sm-4">
+													<div class="form-group">
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-suitcase fa-lg fa-fw"></i></span>
+															<select name="manufacturer" class="form-control input-lg">
+																<option value="" selected="selected">Selecione a Marca</option>
+																<option value="Ford">Ford</option>
+																<option value="GM">GM</option>
+																<option value="Peugeout">Peugeout</option>
+																<option value="Volkswagen">Volkswagen</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-group">
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
+															<select class="form-control input-lg" name="modelo">
+																<option value="" selected="selected">Selecione o Modelo</option>
+																<option>308</option>
+																<option>Corcel</option>
+																<option>Kombi</option>
+																<option>Rural</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-group">
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-calendar-o fa-lg fa-fw"></i></span>
+															<input class="form-control input-lg" placeholder="Ano Modelo" type="text" name="year" id="year">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<div class="input-group">
+															<span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+															<input class="form-control input-lg" placeholder="João da Silva" type="text" name="owner" id="owner">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab3">
+											<br>
+											<h3><strong>Passo 3</strong> - Informações da Troca</h3>
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label>Quilometragem atual</label>
+														<input class="form-control input-lg" placeholder="10000" type="text" name="etc" id="etc">
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label>Tipo de óleo</label>
+														<input class="form-control input-lg" placeholder="5W30W" type="text" name="etc2" id="etc2">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab4">
+											<br>
+											<h3><strong>Step 4</strong> - Save Form</h3>
+											<br>
+											<h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Complete</strong></h1>
+											<h4 class="text-center">Click next to finish</h4>
+											<br>
+											<br>
+										</div>
+
+										<div class="form-actions">
+											<div class="row">
+												<div class="col-sm-12">
+													<ul class="pager wizard no-margin">
+														<!--<li class="previous first disabled">
+														<a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
+														</li>-->
+														<li class="previous disabled">
+															<a href="javascript:void(0);" class="btn btn-lg btn-default"> Anterior </a>
+														</li>
+														<!--<li class="next last">
+														<a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
+														</li>-->
+														<li class="next">
+															<a href="javascript:void(0);" class="btn btn-lg txt-color-darken"> Próximo </a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget -->
+
+		</article>
+		<!-- WIDGET END -->
+
+	</div>
+
+	<!-- end row -->
+
+</section>
+<!-- end widget grid -->
+
+<script type="text/javascript">
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+
+	pageSetUp();
+
+	// PAGE RELATED SCRIPTS
+
+	// pagefunction
+
+	var pagefunction = function() {
+
+		// load bootstrap wizard
+		
+		loadScript("js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js", runBootstrapWizard);
+
+		//Bootstrap Wizard Validations
+
+		function runBootstrapWizard() {
+
+			var $validator = $("#wizard-1").validate({
+
+				rules : {
+					placa : {
+						required : true
+					},
+					manufacturer : {
+						required : true
+					},
+					modelo : {
+						required : true
+					},
+					year : {
+						required : true,
+						minlength : 4,
+						maxlength : 4
+					},
+					owner : {
+						required : true,
+						minlength : 8
+					}
+				},
+
+				messages : {
+					placa : {
+						required : "Você precisa informar a placa para continuar",
+						placa : "A placa deve estar no formato ABC1234"
+					}
+				},
+
+				highlight : function(element) {
+					$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				},
+				unhighlight : function(element) {
+					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				},
+				errorElement : 'span',
+				errorClass : 'help-block',
+				errorPlacement : function(error, element) {
+					if (element.parent('.input-group').length) {
+						error.insertAfter(element.parent());
+					} else {
+						error.insertAfter(element);
+					}
+				}
+			});
+
+			$('#bootstrap-wizard-1').bootstrapWizard({
+
+				'tabClass' : 'form-wizard',
+				'onNext' : function(tab, navigation, index) {
+					var $valid = $("#wizard-1").valid();
+					if (!$valid) {
+						$validator.focusInvalid();
+						return false;
+					} else {
+						$('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass('complete');
+						$('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step').html('<i class="fa fa-check"></i>');
+					}
+				}
+			});
+
+		};
+
+		// load fuelux wizard
+		
+		loadScript("js/plugin/fuelux/wizard/wizard.min.js", fueluxWizard);
+		
+		function fueluxWizard() {
+
+			var wizard = $('.wizard').wizard();
+
+			wizard.on('finished', function(e, data) {
+				//$("#fuelux-wizard").submit();
+				//console.log("submitted!");
+				$.smallBox({
+					title : "Congratulations! Your form was submitted",
+					content : "<i class='fa fa-clock-o'></i><i>1 seconds ago...</i>",
+					color : "#5F895F",
+					iconSmall : "fa fa-check bounce animated",
+					timeout : 4000
+				});
+
+			});
+
+		};
+
+	};
+
+	// end pagefunction
+	
+	// Load bootstrap wizard dependency then run pagefunction
+	pagefunction();
+
+</script>
