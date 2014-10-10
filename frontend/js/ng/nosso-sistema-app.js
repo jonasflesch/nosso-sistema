@@ -4,7 +4,8 @@ var nossoSistemaApp = angular.module('nossoSistemaApp', [
     'nossoSistema.localize',
     'nossoSistema.ribbon',
     'nossoSistema.navigation',
-    'nossoSistema.activity'
+    'nossoSistema.activity',
+    'nossoSistema.action'
 ])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
