@@ -15,7 +15,10 @@ var nossoSistemaApp = angular.module('nossoSistemaApp', [
   .when('/oleo/receber-carro', {
     templateUrl: 'views/oleo/receber-carro.html',
     controller: 'OleoReceberCarroController'
-  });
+  })
+  .otherwise({
+    redirectTo: '/dashboard'
+  });;
 
 }]);
 
