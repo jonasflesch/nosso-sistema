@@ -47,7 +47,7 @@
 					<div class="widget-body">
 
 						<div class="row">
-							<form id="wizard-1" novalidate="novalidate">
+							<ng-form name="receberCarroForm" novalidate="novalidate">
 								<div id="bootstrap-wizard-1" class="col-sm-12">
 									<div class="form-bootstrapWizard">
 										<ul class="bootstrapWizard form-wizard">
@@ -77,10 +77,20 @@
 											<div class="row">
 
 												<div class="col-sm-6">
-													<div class="form-group">
+													<div class="form-group" ns-validation-style="receberCarroForm.placa">
 														<div class="input-group">
 															<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
-															<input class="form-control input-lg" data-mask="aaa9999" data-mask-placeholder= " "  placeholder="ABC1234" type="text" name="placa" id="placa" ng-model="placa" ng-blur="placa = placa.toUpperCase()">
+															<input
+																id="placa"
+																name="placa" 
+																class="form-control input-lg"
+																data-mask="aaa9999"
+																data-mask-placeholder=" " 
+																placeholder="ABC1234" 
+																type="text"
+																ng-model="placa"
+																ng-blur="placa = placa.toUpperCase()"
+																required>
 
 														</div>
 													</div>
@@ -330,7 +340,7 @@
 
 									</div>
 								</div>
-							</form>
+							</ng-form>
 						</div>
 
 					</div>
@@ -399,7 +409,7 @@
 
 		function runBootstrapWizard() {
 
-			var $validator = $("#wizard-1").validate({
+			/*var $validator = $("#wizard-1").validate({
 				lang: 'pt_BR',
 				rules : {
 					placa : {
@@ -444,7 +454,7 @@
 						error.insertAfter(element);
 					}
 				}
-			});
+			}); */
 
 			$('#bootstrap-wizard-1').bootstrapWizard({
 
