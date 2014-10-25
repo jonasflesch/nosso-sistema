@@ -1,0 +1,27 @@
+<br>
+<h3><strong>Passo 1 </strong> - Informar Placa</h3>
+
+<div class="row">
+
+	<div class="col-sm-6">
+		<div class="form-group" ns-validation-style="receberCarroForm.placa">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
+				<input
+					id="placa"
+					name="placa" 
+					class="form-control input-lg"
+					data-mask="aaa9999"
+					data-mask-placeholder=" "
+					placeholder="ABC1234" 
+					type="text"
+					ng-model="troca.placa"
+					ng-blur="troca.placa = troca.placa.toUpperCase()"
+					required>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>

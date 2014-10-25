@@ -6,7 +6,8 @@ var nossoSistemaApp = angular.module('nossoSistemaApp', [
     'nossoSistema.navigation',
     'nossoSistema.activity',
     'nossoSistema.action',
-    'nossoSistema.validation'
+    'nossoSistema.validation',
+    'angular-jquery-maskedinput'
 ])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider

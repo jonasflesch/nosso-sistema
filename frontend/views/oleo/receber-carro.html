@@ -48,290 +48,74 @@
 
 						<div class="row">
 							<ng-form name="receberCarroForm" novalidate="novalidate">
-								<div id="bootstrap-wizard-1" class="col-sm-12">
+								<div id="wizard-receber-carro" class="col-sm-12">
 									<div class="form-bootstrapWizard">
 										<ul class="bootstrapWizard form-wizard">
-											<li class="active" data-target="#step1">
-												<a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Informar Placa</span> </a>
+											<li ng-class="{active: activeStep == 'INFORMAR_PLACA'}">
+												<span class="step">1</span> <span class="title">Informar Placa</span>
 											</li>
-											<li data-target="#step2">
-												<a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Informar Veículo</span> </a>
+											<li ng-class="{active: activeStep == 'VEICULO'}">
+												<span class="step">2</span> <span class="title">Informar Veículo</span>
 											</li>
-											<li data-target="#step3">
-												<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Informar Proprietário</span> </a>
+											<li ng-class="{active: activeStep == 'PROPRIETARIO'}">
+												<a data-toggle="tab"> <span class="step">3</span> <span class="title">Informar Proprietário</span> </a>
 											</li>
-											<li data-target="#step4">
-												<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Trocar</span> </a>
+											<li ng-class="{active: activeStep == 'TROCA'}">
+												<span class="step">4</span> <span class="title">Trocar</span>
 											</li>
-											<li data-target="#step5">
-												<a href="#tab5" data-toggle="tab"> <span class="step">5</span> <span class="title">Final</span> </a>
+											<li ng-class="{active: activeStep == 'CONFIRMACAO'}">
+												<span class="step">5</span> <span class="title">Final</span>
 											</li>
 										</ul>
 										<div class="clearfix"></div>
 									</div>
 									<div class="tab-content">
-										<div class="tab-pane active" id="tab1">
-											<br>
-											<h3><strong>Passo 1 </strong> - Informar Placa</h3>
+										<div 
+											class="tab-pane active" 
+											id="tabcontent"
+											>
+											<div
+												id="tab-informar-placa"
+												ng-if="activeStep == 'INFORMAR_PLACA'"
+												ng-include="'views/oleo/receber-carro-informar-placa.html'"
+												ng-controller="OleoReceberCarroPlacaController"
+											/>
+											<div
+												id="tab-veiculo"
+												ng-if="activeStep == 'VEICULO'"
+												ng-include="'views/oleo/receber-carro-veiculo.html'"
+												ng-controller="OleoReceberCarroVeiculoController"
+											/>
+											<div
+												id="tab-proprietario"
+												ng-if="activeStep == 'PROPRIETARIO'"
+												ng-include="'views/oleo/receber-carro-proprietario.html'"
+												ng-controller="OleoReceberCarroProprietarioController"
+											/>
+											<div
+												id="tab-troca"
+												ng-if="activeStep == 'TROCA'"
+												ng-include="'views/oleo/receber-carro-troca.html'"
+												ng-controller="OleoReceberCarroTrocaController"
+											/>
+											<div
+												id="tab-confirmacao"
+												ng-if="activeStep == 'CONFIRMACAO'"
+												ng-include="'views/oleo/receber-carro-confirmacao.html'"
+												ng-controller="OleoReceberCarroConfirmacaoController"
+											/>
 
-											<div class="row">
-
-												<div class="col-sm-6">
-													<div class="form-group" ns-validation-style="receberCarroForm.placa">
-														<div class="input-group">
-															<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
-															<input
-																id="placa"
-																name="placa" 
-																class="form-control input-lg"
-																data-mask="aaa9999"
-																data-mask-placeholder=" " 
-																placeholder="ABC1234" 
-																type="text"
-																ng-model="placa"
-																ng-blur="placa = placa.toUpperCase()"
-																required>
-
-														</div>
-													</div>
-
-												</div>
-
-											</div>
-
-										</div>
-										<div class="tab-pane" id="tab2">
-											<br>
-											<h3><strong>Passo 2</strong> - Informações do Veículo</h3>
-											<div class="alert alert-info fade in">
-												<button class="close" data-dismiss="alert">
-													×
-												</button>
-												<i class="fa-fw fa fa-info"></i>
-												<strong>Informação!</strong> Esta é a primeira troca deste veículo, preencha as informações.
-											</div>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<div class="input-group">
-															<span class="input-group-addon"><i class="fa fa-suitcase fa-lg fa-fw"></i></span>
-															<select name="manufacturer" class="form-control input-lg">
-																<option value="" selected="selected">Selecione a Marca</option>
-																<option value="Ford">Ford</option>
-																<option value="GM">GM</option>
-																<option value="Peugeout">Peugeout</option>
-																<option value="Volkswagen">Volkswagen</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<div class="input-group">
-															<span class="input-group-addon"><i class="fa fa-car fa-lg fa-fw"></i></span>
-															<select class="form-control input-lg" name="modelo">
-																<option value="" selected="selected">Selecione o Modelo</option>
-																<option>308</option>
-																<option>Clio 1.0</option>
-																<option>Clio 1.6</option>
-																<option>Gol</option>
-																<option>Vectra</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<div class="input-group">
-															<span class="input-group-addon"><i class="fa fa-calendar-o fa-lg fa-fw"></i></span>
-															<input class="form-control input-lg" data-mask="9999" data-mask-placeholder= " " placeholder="Ano Modelo" maxlength="4" type="text" name="year" id="year">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="tab3">
-											<br>
-											<h3><strong>Passo 3</strong> - Informações do Proprietário</h3>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>CPF/CNPJ</label>
-														<input class="form-control input-lg" placeholder="CPF / CNPJ" type="text" name="cpfcnpj" id="cpfcnpj">
-													</div>
-												</div>
-												<div class="col-sm-8">
-													<div class="form-group">
-														<label>Nome</label>
-														<input class="form-control input-lg" placeholder="Nome" type="text" name="nome" id="nome">
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Celular</label>
-														<input class="form-control input-lg" placeholder="(00) 0000-0000" type="text" name="cpfcnpj" id="cpfcnpj">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Telefone Fixo/Comercial</label>
-														<input class="form-control input-lg" placeholder="(00) 0000-0000" type="text" name="nome" id="nome">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>E-mail</label>
-														<input class="form-control input-lg" placeholder="seuemail@dominio.com" type="text" name="email" id="email">
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-8">
-													<div class="form-group">
-														<label>Endereço</label>
-														<input class="form-control input-lg" placeholder="Endereço" type="text" name="endereco" id="endereco">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Número</label>
-														<input class="form-control input-lg" placeholder="Numero" type="text" name="numero" id="numero">
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Complemento</label>
-														<input class="form-control input-lg" placeholder="Apto" type="text" name="complemento" id="complemento">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Estado</label>
-														<select name="estado" class="form-control input-lg">
-															<option value="" selected="selected">Selecione um Estado</option>
-															<option value="SC">SC</option>
-															<option value="RS">RS</option>
-															<option value="SP">SP</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Cidade</label>
-														<select name="cidade" class="form-control input-lg">
-															<option value="" selected="selected">Selecione uma Cidade</option>
-															<option value="Gramado">Gramado</option>
-															<option value="Igrejinha">Igrejinha</option>
-															<option value="RS">Três Coroas</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="tab4">
-											<br>
-											<h3><strong>Passo 3</strong> - Informações da Troca</h3>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Última troca</label>
-														<input class="form-control input-lg" type="text" name="etc" id="etc" value= "30150" disabled>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Trocou filtro</label>
-														<select name="cidade" class="form-control input-lg" disabled>
-															<option value="" selected="selected">Sim</option>
-															<option value="Gramado">Não</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>&nbsp;</label>
-														<div>
-															<!-- Button trigger modal -->
-															<a class="btn btn-default btn-lg" href="ajax/modal-content/modal-historico.html" data-toggle="modal" data-target="#remoteModal"  role="button"><span class="fa fa-list fa-lg fa-fw"></span> Ver histórico</a>
-
-															<!-- MODAL PLACE HOLDER -->
-															<div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
-																<div class="modal-dialog">
-																	<div class="modal-content"></div>
-																</div>
-															</div>
-															<!-- END MODAL -->
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Quilometragem atual</label>
-														<input class="form-control input-lg" data-mask="9?99999" data-mask-placeholder= " " placeholder="10000" type="text" name="etc" id="etc">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Troca do Filtro</label>
-														<select name="cidade" class="form-control input-lg" ng-model="trocaFiltro">
-															<option value="1" >Sim</option>
-															<option value="2">Não</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Filtro Utilizado</label>
-														<input class="form-control input-lg" placeholder="PH5548A" type="text" name="etc2" id="etc2" ng-disabled="trocaFiltro == '2'">
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Óleo Colocado</label>
-														<input class="form-control input-lg" placeholder="5W30W" type="text" name="etc2" id="etc2">
-													</div>
-												</div>
-												<div class="col-sm-4">
-													<div class="form-group">
-														<label>Litros</label>
-														<input class="form-control input-lg" placeholder="5" type="text" name="quantidade" id="quantidade">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="tab5">
-											<br>
-											<h3><strong>Passo 5</strong> - Confirmar</h3>
-											<br>
-											<h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Completo</strong></h1>
-											<h4 class="text-center">Clique em próximo para finalizar</h4>
-											<br>
-											<br>
 										</div>
 
 										<div class="form-actions">
 											<div class="row">
 												<div class="col-sm-12">
 													<ul class="pager wizard no-margin">
-														<!--<li class="previous first disabled">
-														<a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
-														</li>-->
-														<li class="previous disabled">
-															<a href="javascript:void(0);" class="btn btn-lg btn-default"> Anterior </a>
+														<li class="previous" ng-class="{disabled: firstStep()}">
+															<a href="javascript:void(0);" ng-click="previousStep()" class="btn btn-lg btn-default"> Anterior </a>
 														</li>
-														<!--<li class="next last">
-														<a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
-														</li>-->
-														<li class="next">
-															<a href="javascript:void(0);" class="btn btn-lg txt-color-darken"> Próximo </a>
+														<li class="next" ng-class="{disabled: lastStep()}">
+															<a href="javascript:void(0);" ng-click="nextStep()" class="btn btn-lg txt-color-darken"> Próximo </a>
 														</li>
 													</ul>
 												</div>
