@@ -1,0 +1,21 @@
+#java specific
+*.class
+
+#maven
+target
+
+#netbeans ignore personal stuff 
+nbproject/private/
+
+#eclipse ignore personal stuff 
+.project
+.classpath
+.settings
+
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
