@@ -9,5 +9,13 @@
 			<sqlFile path="carro/carro-ddl-rollback.sql" relativeToChangelogFile="true" />
 		</rollback>
 	</changeSet>
+	
+	<changeSet id="carro-load" author="jonasflesch" context="test">
+		<comment>Preenche a tabela carro com informações para teste</comment>
+		<sqlFile path="carro/carro-load.sql" relativeToChangelogFile="true" />
+		<rollback>
+			<sqlFile path="carro/carro-load-rollback.sql" relativeToChangelogFile="true" />
+		</rollback>
+	</changeSet>
 
 </databaseChangeLog>

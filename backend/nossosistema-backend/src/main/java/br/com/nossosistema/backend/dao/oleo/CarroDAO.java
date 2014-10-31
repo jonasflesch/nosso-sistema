@@ -1,5 +1,7 @@
 package br.com.nossosistema.backend.dao.oleo;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +14,17 @@ import br.com.nossosistema.backend.bean.oleo.Carro;
 @Repository
 public class CarroDAO extends JdbcDaoSupport{
 	
-	
 	public Carro findCarroByCdPlaca(String cdPlaca){
 		String sql = "SELECT * FROM Carro WHERE cdPlaca = ?";
 		 
-		Carro carro = getJdbcTemplate().queryForObject( 
+		List<Carro> carros = getJdbcTemplate().query( 
 				sql, new Object[] { cdPlaca }, 
 				new BeanPropertyRowMapper<Carro>(Carro.class));
 	 
-		return carro;
+		if(carros.isEmpty()){
+			return null;
+		}
+		return carros.get(0);
 	}
 	
 	@Autowired
